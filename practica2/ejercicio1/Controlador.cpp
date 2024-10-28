@@ -24,5 +24,22 @@ Sensor* Controlador::getSensor()
   return this->sensorPt;
 }
 
-void Controlador::setActuador(Actuador *actuador);
-Actuador* Controlador::getActuador();
+void Controlador::setActuador(Actuador* actuador)
+{
+  return this->actuador = actuador;
+}
+
+Actuador* Controlador::getActuador()
+{
+  return this->actuadorPt;
+}
+
+float Controlador::calculaComando(float medida)
+{
+  return this->0.0;
+}
+void Controlador::calculaEtapa(){
+  float medida = Sensor::getMedida();
+  float resultado = Controlador::calculaComando(medida);
+  Actuador::setComando(resultado);
+}
