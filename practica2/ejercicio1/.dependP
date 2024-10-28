@@ -1,0 +1,11 @@
+prueba01.o: prueba01.cpp Dispositivo.hpp
+prueba02.o: prueba02.cpp Dispositivo.hpp
+prueba03.o: prueba03.cpp Dispositivo.hpp
+prueba11.o: prueba11.cpp SensorNivel.hpp Sensor.hpp Dispositivo.hpp
+prueba12.o: prueba12.cpp SensorNivel.hpp Sensor.hpp Dispositivo.hpp
+prueba13.o: prueba13.cpp SensorTemperatura.hpp Sensor.hpp Dispositivo.hpp
+prueba14.o: prueba14.cpp SensorTemperatura.hpp Sensor.hpp Dispositivo.hpp
+prueba21.o: prueba21.cpp Actuador.hpp Dispositivo.hpp
+prueba23.o: prueba23.cpp Valvula.hpp Actuador.hpp Dispositivo.hpp
+prueba24.o: prueba24.cpp Valvula.hpp Actuador.hpp Dispositivo.hpp
+prueba31.o: prueba31.cpp Controlador.hpp

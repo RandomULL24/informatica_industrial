@@ -1,0 +1,2 @@
+Controlador.o: Controlador.cpp Controlador.hpp
+Dinamico.o: Dinamico.cpp Dinamico.hpp

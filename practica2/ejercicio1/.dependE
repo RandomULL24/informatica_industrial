@@ -1,0 +1,11 @@
+prueba01: prueba01.o Dispositivo.o
+prueba02: prueba02.o Dispositivo.o
+prueba03: prueba03.o Dispositivo.o
+prueba11: prueba11.o SensorNivel.o Sensor.o Dispositivo.o
+prueba12: prueba12.o SensorNivel.o Sensor.o Dispositivo.o
+prueba13: prueba13.o SensorTemperatura.o Sensor.o Dispositivo.o
+prueba14: prueba14.o SensorTemperatura.o Sensor.o Dispositivo.o
+prueba21: prueba21.o Actuador.o Dispositivo.o
+prueba23: prueba23.o Valvula.o Actuador.o Dispositivo.o
+prueba24: prueba24.o Valvula.o Actuador.o Dispositivo.o
+prueba31: prueba31.o Controlador.o
