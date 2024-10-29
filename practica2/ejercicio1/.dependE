@@ -10,10 +10,11 @@ prueba23: prueba23.o Valvula.o Actuador.o Dispositivo.o
 prueba24: prueba24.o Valvula.o Actuador.o Dispositivo.o
 prueba25: prueba25.o Calefactor.o Actuador.o Dispositivo.o
 prueba26: prueba26.o Calefactor.o Actuador.o Dispositivo.o
-prueba31: prueba31.o Controlador.o
-prueba32: prueba32.o Controlador.o SensorNivel.o Sensor.o \
- Dispositivo.o SensorTemperatura.o Valvula.o Actuador.o \
- Calefactor.o
-prueba33: prueba33.o Controlador.o SensorNivel.o Sensor.o \
- Dispositivo.o SensorTemperatura.o Valvula.o Actuador.o \
- Calefactor.o
+prueba31: prueba31.o Controlador.o Dinamico.o Dispositivo.o \
+ Actuador.o Sensor.o
+prueba32: prueba32.o Controlador.o Dinamico.o Dispositivo.o \
+ Actuador.o Sensor.o SensorNivel.o SensorTemperatura.o \
+ Valvula.o Calefactor.o
+prueba33: prueba33.o Controlador.o Dinamico.o Dispositivo.o \
+ Actuador.o Sensor.o SensorNivel.o SensorTemperatura.o \
+ Valvula.o Calefactor.o

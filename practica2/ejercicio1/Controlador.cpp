@@ -2,10 +2,14 @@
 //Fecha: 22/10/2024
 
 #include "Controlador.hpp"
+#include <cmath>
 
 void Controlador::setConsigna(float consigna) 
 {
   this->consigna = consigna;
+  
+   if(! this->isEncendido())
+    this->consigna = NAN;
 }
 
 float Controlador::getConsigna() 
@@ -15,7 +19,7 @@ float Controlador::getConsigna()
 
 void Controlador::setSensor(Sensor* sensor)
 {
-  this->sensor = sensor;
+  this->sensorPt = sensor;
   
 }
 
@@ -26,7 +30,7 @@ Sensor* Controlador::getSensor()
 
 void Controlador::setActuador(Actuador* actuador)
 {
-  return this->actuador = actuador;
+  this->actuadorPt = actuador;
 }
 
 Actuador* Controlador::getActuador()
@@ -36,10 +40,12 @@ Actuador* Controlador::getActuador()
 
 float Controlador::calculaComando(float medida)
 {
-  return this->0.0;
+  return 0.0;
 }
 void Controlador::calculaEtapa(){
-  float medida = Sensor::getMedida();
-  float resultado = Controlador::calculaComando(medida);
-  Actuador::setComando(resultado);
+
+  //~ float medida = sensorPt->Sensor::getMedida();
+  //~ float comando = calculaComando(medida);
+  //~ actuadorPt->Actuador::setComando(comando);
+ 
 }

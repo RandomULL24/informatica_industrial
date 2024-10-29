@@ -10,10 +10,11 @@ prueba23.o: prueba23.cpp Valvula.hpp Actuador.hpp Dispositivo.hpp
 prueba24.o: prueba24.cpp Valvula.hpp Actuador.hpp Dispositivo.hpp
 prueba25.o: prueba25.cpp Calefactor.hpp Actuador.hpp Dispositivo.hpp
 prueba26.o: prueba26.cpp Calefactor.hpp Actuador.hpp Dispositivo.hpp
-prueba31.o: prueba31.cpp Controlador.hpp
-prueba32.o: prueba32.cpp Controlador.hpp SensorNivel.hpp Sensor.hpp \
- Dispositivo.hpp SensorTemperatura.hpp Valvula.hpp Actuador.hpp \
- Calefactor.hpp
-prueba33.o: prueba33.cpp Controlador.hpp SensorNivel.hpp Sensor.hpp \
- Dispositivo.hpp SensorTemperatura.hpp Valvula.hpp Actuador.hpp \
- Calefactor.hpp
+prueba31.o: prueba31.cpp Controlador.hpp Dinamico.hpp Dispositivo.hpp \
+ Actuador.hpp Sensor.hpp
+prueba32.o: prueba32.cpp Controlador.hpp Dinamico.hpp Dispositivo.hpp \
+ Actuador.hpp Sensor.hpp SensorNivel.hpp SensorTemperatura.hpp \
+ Valvula.hpp Calefactor.hpp
+prueba33.o: prueba33.cpp Controlador.hpp Dinamico.hpp Dispositivo.hpp \
+ Actuador.hpp Sensor.hpp SensorNivel.hpp SensorTemperatura.hpp \
+ Valvula.hpp Calefactor.hpp

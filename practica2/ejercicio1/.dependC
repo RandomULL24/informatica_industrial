@@ -1,7 +1,8 @@
 Actuador.o: Actuador.cpp Actuador.hpp Dispositivo.hpp
 Calefactor.o: Calefactor.cpp Calefactor.hpp Actuador.hpp Dispositivo.hpp
-Controlador.o: Controlador.cpp Controlador.hpp
-Dinamico.o: Dinamico.cpp Dinamico.hpp
+Controlador.o: Controlador.cpp Controlador.hpp Dinamico.hpp \
+ Dispositivo.hpp Actuador.hpp Sensor.hpp
+Dinamico.o: Dinamico.cpp Dinamico.hpp Dispositivo.hpp
 Dispositivo.o: Dispositivo.cpp Dispositivo.hpp
 Sensor.o: Sensor.cpp Sensor.hpp Dispositivo.hpp
 SensorNivel.o: SensorNivel.cpp SensorNivel.hpp Sensor.hpp Dispositivo.hpp
