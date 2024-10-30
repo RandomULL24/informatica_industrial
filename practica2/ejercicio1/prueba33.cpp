@@ -87,6 +87,7 @@ int main() {
   SensorNivel sn1(maxNivel);
   cnt1.setSensor(&sn1);
   sn1.enciende();
+
   {
     pruebas++;
     cnt1.calculaEtapa();

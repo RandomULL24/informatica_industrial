@@ -10,8 +10,10 @@ void Controlador::setConsigna(float consigna)
 {
   this->consigna = consigna;
   
-   if(! this->isEncendido())
+  if(! this->isEncendido())
+  {
     this->consigna = NAN;
+  } 
 }
 
 float Controlador::getConsigna() 
@@ -42,21 +44,27 @@ Actuador* Controlador::getActuador()
 
 float Controlador::calculaComando(float medida)
 {
-  return 0.0;
+  float comando = 0.0;
+  
+  if(std::isnan(medida))
+  {
+    comando = NAN;
+  }
+  
+  return comando;
 }
-void Controlador::calculaEtapa(){
+void Controlador::calculaEtapa()
+{
 
   float comando = NAN;
   float medida = NAN;
   
-  //~ comando = (this->actuadorPt)->getComando();
- 
   
   if(!(sensorPt == nullptr))
   {
     medida = (this->sensorPt)->getMedida();
-    std::cout << "Prueba 1" << std::endl;
   }
+  
   
   if(!(actuadorPt == nullptr))
   {
@@ -64,14 +72,11 @@ void Controlador::calculaEtapa(){
     {
       comando = (this->actuadorPt)->getComando();
       (this->actuadorPt)->setComando(comando);
-      std::cout << "Prueba 3" << std::endl;
-
     }
     else
     {
       comando = calculaComando(medida);
       (this->actuadorPt)->setComando(comando);
-      std::cout << "Prueba 2" << std::endl;
     }
   }
  

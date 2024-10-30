@@ -12,14 +12,24 @@ void SensorNivel::setAltura(float altura) {
 
 float SensorNivel::getMedida() {
 
+  
   if(! this->isEncendido())
+  {
     return NAN;
-
-  if (this->alturaActual < 0.0)
-    return 0.0;
-
-  if (this->alturaActual >   this->alturaMaxima)
-    return 1.0;
-
-  return this->alturaActual / this->alturaMaxima;
+  }
+  else
+  {
+    if (this->alturaActual < 0.0)
+    {
+      return 0.0;
+    }
+    else if (this->alturaActual > this->alturaMaxima)
+    {
+      return 1.0;
+    }
+    else
+    {
+      return (this->alturaActual / this->alturaMaxima);
+    }
+  }
 }
