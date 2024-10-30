@@ -2,6 +2,7 @@
 //Fecha: 22/10/2024
 
 #include "Controlador.hpp"
+#include "Dispositivo.hpp"
 #include <cmath>
 
 void Controlador::setConsigna(float consigna) 
@@ -44,8 +45,18 @@ float Controlador::calculaComando(float medida)
 }
 void Controlador::calculaEtapa(){
 
-  //~ float medida = sensorPt->Sensor::getMedida();
-  //~ float comando = calculaComando(medida);
-  //~ actuadorPt->Actuador::setComando(comando);
+  float medida = NAN;
+  float comando = NAN;
+  
+  if(!(sensorPt == nullptr))
+  {
+    medida = (this->sensorPt)->getMedida();
+    comando = calculaComando(medida);
+  }
+  
+  if(!(actuadorPt == nullptr))
+  {
+    (this->actuadorPt)->setComando(comando);
+  }
  
 }
