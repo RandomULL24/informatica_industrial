@@ -18,8 +18,10 @@ void Actuador::setComando(float comando) {
 float Actuador::getComando() {
 
   if (! this->isEncendido())
+  {
     return NAN;
-
+  }
+  
   return this->comando;
 
 }

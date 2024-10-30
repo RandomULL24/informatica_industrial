@@ -4,6 +4,7 @@
 #include "Controlador.hpp"
 #include "Dispositivo.hpp"
 #include <cmath>
+#include <iostream>
 
 void Controlador::setConsigna(float consigna) 
 {
@@ -45,18 +46,33 @@ float Controlador::calculaComando(float medida)
 }
 void Controlador::calculaEtapa(){
 
-  float medida = NAN;
   float comando = NAN;
+  float medida = NAN;
+  
+  //~ comando = (this->actuadorPt)->getComando();
+ 
   
   if(!(sensorPt == nullptr))
   {
     medida = (this->sensorPt)->getMedida();
-    comando = calculaComando(medida);
+    std::cout << "Prueba 1" << std::endl;
   }
   
   if(!(actuadorPt == nullptr))
   {
-    (this->actuadorPt)->setComando(comando);
+    if(sensorPt == nullptr)
+    {
+      comando = (this->actuadorPt)->getComando();
+      (this->actuadorPt)->setComando(comando);
+      std::cout << "Prueba 3" << std::endl;
+
+    }
+    else
+    {
+      comando = calculaComando(medida);
+      (this->actuadorPt)->setComando(comando);
+      std::cout << "Prueba 2" << std::endl;
+    }
   }
  
 }
