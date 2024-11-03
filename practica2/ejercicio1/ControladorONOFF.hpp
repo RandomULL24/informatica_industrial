@@ -10,7 +10,14 @@
 
 class ControladorONOFF : public Controlador
 {
-
+  private:
+    float consigna = NAN;
+    Sensor* sensorPt = nullptr;
+    Actuador* actuadorPt = nullptr;
+    
+  public:
+    float calculaComando(float medida);
+    void calculaEtapa();
 };
 
 #endif

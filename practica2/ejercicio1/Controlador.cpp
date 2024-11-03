@@ -18,7 +18,7 @@ void Controlador::setConsigna(float consigna)
 
 float Controlador::getConsigna() 
 {
-  return this -> consigna;
+  return this -> consigna; 
 }
 
 void Controlador::setSensor(Sensor* sensor)
@@ -60,20 +60,20 @@ void Controlador::calculaEtapa()
   float medida = NAN;
   
   
-  if(!(sensorPt == nullptr))
+  if(!(sensorPt == nullptr)) //Si hay un sensor activo
   {
     medida = (this->sensorPt)->getMedida();
   }
   
   
-  if(!(actuadorPt == nullptr))
+  if(!(actuadorPt == nullptr)) //Si hay un actuador activo
   {
-    if(sensorPt == nullptr)
+    if(sensorPt == nullptr) //Si NO hay un sensor activo
     {
       comando = (this->actuadorPt)->getComando();
       (this->actuadorPt)->setComando(comando);
     }
-    else
+    else //Si hay un sensor activo
     {
       comando = calculaComando(medida);
       (this->actuadorPt)->setComando(comando);

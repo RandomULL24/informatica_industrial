@@ -15,16 +15,15 @@ class Controlador : public Dinamico
     Actuador* actuadorPt = nullptr;
     
   public:
-  
-  void setConsigna(float consigna);
-  float getConsigna();
-  void setSensor(Sensor* sensor);
-  Sensor* getSensor();
+    void setConsigna(float consigna);
+    float getConsigna();
+    void setSensor(Sensor* sensor);
+    Sensor* getSensor();
 
-  void setActuador(Actuador* actuador);
-  Actuador* getActuador();
-  float calculaComando(float medida);
-  void calculaEtapa();
+    void setActuador(Actuador* actuador);
+    Actuador* getActuador();
+    float calculaComando(float medida);
+    void calculaEtapa();
   
 };
 
