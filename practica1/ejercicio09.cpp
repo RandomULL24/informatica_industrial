@@ -1,6 +1,7 @@
 // Autor: Lucas Díaz Pérez
 // Fecha: 8-7-2024
-#include<iostream>
+#include <iostream>
+#include <string>
 
 std::string numeroBits(unsigned valor)
 {
@@ -38,21 +39,29 @@ std::string numeroBits(unsigned valor)
 
 int main()
 {
-	int entero;
+	unsigned entero;
+  //manejamos la entrada como string para poder detectar el fallo de 
+  //conversión a unsgined en caso de que no se trate de uno (ej: xx)
+  std::string input;
 	
 	do
 	{
-		//~ std::cout << "Introduce el entero: ";
-		std::cin >> entero;
+		std::cin >> input;
+    try
+    {
+      entero = std::stoul(input); //Si NO es unsigned manda una execpción
+    }
+    catch(std::invalid_argument& e)
+    {
+        return 1;
+    }
+    
+		
 		std::cout << numeroBits(entero) << " 0x" << std::hex << entero  
 				<< std::endl;
 	
 	}
 	while(entero != 0);
-
-	//~ std::cerr << "Se ha salido del programa" << std::endl;
-			
-	
 	
 	return 0;
 }
