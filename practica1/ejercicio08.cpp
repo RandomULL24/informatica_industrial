@@ -1,6 +1,7 @@
 // Autor: Lucas Díaz Pérez
 // Fecha: 8-7-2024
-#include<iostream>
+#include <iostream>
+#include <string>
 
 int numero_bits_uno(int num)
 {
@@ -25,20 +26,28 @@ int numero_bits_uno(int num)
 int main()
 {
 	int entero;
-	
+  //manejamos la entrada como string para poder detectar el fallo de 
+  //conversión a entero en caso de que no se trate de uno (ej: xx)
+  std::string input;  
+  
 	do
 	{
-		//~ std::cout << "Introduce el entero: ";
-		std::cin >> entero;
-		std::cout << std::dec << numero_bits_uno(entero) << " 0x" << std::hex << entero  
-				<< std::endl;
+		std::cin >> input;
+    
+    try
+    {
+      entero = std::stoi(input);
+    }
+    catch(std::invalid_argument& e) //Si NO es entero que devuelva error
+    {
+      return 1;
+    } 
+		std::cout << std::dec << numero_bits_uno(entero) << " 0x" << 
+        std::hex << entero << std::endl;
 	
 	}
 	while(entero != 0);
 
-	//~ std::cerr << "Se ha salido del programa" << std::endl;
-			
-	
-	
+
 	return 0;
 }
