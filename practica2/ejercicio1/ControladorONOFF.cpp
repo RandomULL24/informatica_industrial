@@ -24,8 +24,8 @@ float ControladorONOFF::calculaComando(float medida)
     comando = NAN;
   }
   
-  std::cerr << "Consigna: " << (this->consigna) << std::endl;
-  std::cerr << "Comando: " << comando << std::endl;
+  //~ std::cerr << "Consigna: " << (this->consigna) << std::endl;
+  //~ std::cerr << "Comando: " << comando << std::endl;
   return comando;
 }
 
