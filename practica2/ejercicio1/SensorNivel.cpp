@@ -1,4 +1,6 @@
 // Dedfinición de la clase SensorNivel
+// Autor: Lucas Díaz Pérez
+// Fecha: 22/10/2024
 
 #include "SensorNivel.hpp"
 
