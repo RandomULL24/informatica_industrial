@@ -16,7 +16,7 @@ class Planta1TanqueNivel : public Planta
     Valvula actValvula;
     std::string nombre;
     
-    float hk = 0.0;
+    float hk = NAN;
     float A  = 2.0;
     float Z  = 0.1;
     float T  = 0.5;
