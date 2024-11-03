@@ -6,6 +6,7 @@
 #include "Valvula.hpp"
 #include <cmath>
 #include <string>
+#include <iostream>
 
 //Instanciamos los valores de la función.
 Planta1TanqueNivel::Planta1TanqueNivel(float caudalMaximo, float nivelMaximo) : 
@@ -37,6 +38,9 @@ void Planta1TanqueNivel::enciende()
   (this->actValvula).enciende();
   this->Planta::enciende();
   
+  //Si la planta se enciende el valor de hk=0.0
+  (this->hk) = 0.0;
+
 }
 
 float Planta1TanqueNivel::getAltura()
@@ -46,6 +50,8 @@ float Planta1TanqueNivel::getAltura()
 
 void Planta1TanqueNivel::calculaEtapa()
 {
+
+  
   hk = (this->hk) + ((this->T)/(this->A))*((this->actValvula.getCaudal())
       - (this->Z)*sqrt(this->hk));
       

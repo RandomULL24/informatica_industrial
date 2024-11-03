@@ -56,6 +56,7 @@ int main() {
       std::cout << "FALLO " << ++fallos << ": la planta da altura "
           << ma <<" cuando se esperaba " << esperado << std::endl;
   }
+  std::cout << "Ey"<< std::endl;
 
   for(unsigned i = 0; i < comandos.size(); i++) {
     float cAct = comandos.at(i);
