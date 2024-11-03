@@ -19,13 +19,13 @@ float ControladorONOFF::calculaComando(float medida)
     comando = 1;
   }
   
-  if(std::isnan(medida))
+  if(std::isnan(medida) || std::isnan(consigna))
   {
     comando = NAN;
   }
   
-  //~ std::cerr << "Consigna: " << (this->consigna) << std::endl;
-  //~ std::cerr << "Comando: " << comando << std::endl;
+  std::cerr << "Consigna: " << (this->consigna) << std::endl;
+  std::cerr << "Comando: " << comando << std::endl;
   return comando;
 }
 
