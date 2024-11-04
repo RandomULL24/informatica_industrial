@@ -6,11 +6,18 @@
 #include <fstream>
 #include <cmath>
 
-unsigned funcion(const std::vector<bool>& vectorBool, unsigned indexInicial, 
-    unsigned indexFinal)
+//Convierte un vector bool en un unsigned con esos mismos bits en 1,
+//pudiendo recortar secciones específicas del vector.
+
+unsigned boolToUnsigned(const std::vector<bool>& vectorBool, 
+    unsigned indexInicial, unsigned indexFinal)
 {
   std::string string1;
   unsigned suma = 0;
+  
+  //Hacemos que el índice de la potencia siempre empiece en 0, y que vaya 
+  //aumentando a medida que avance el vector para que pueda convertir
+  //adecuadamente de bool a unsigned -> "i-indexInicial"
   
   for(unsigned i = indexInicial; i <= (indexFinal); i++)
   {
@@ -36,42 +43,50 @@ unsigned funcion(const std::vector<bool>& vectorBool, unsigned indexInicial,
   return suma;
 }
 
+//Convierte unsgined en un string con la apariencia del valor binario
+//del unsigned pero sin los 0 a la izquierda.
+
 std::string numeroBits(unsigned valor)
 {
-	int totalBits = sizeof(valor)*8;
-	std::string versionString;
-	bool unoVisto = false;
+  int totalBits = sizeof(valor)*8;
+  std::string versionString;
+  bool unoVisto = false;
 
-	for(int i = (totalBits - 1); i >= 0; i--){
-		
-		int mascara = 1 << i;
-		
-		if(valor & mascara)
-		{
-			versionString =  versionString + '1';
-			unoVisto = true;
-		}
-		else
-		{
-			if(unoVisto)
-			{
-				versionString = versionString + '0';
-			}
-		}
-	}
+  for(int i = (totalBits - 1); i >= 0; i--){
+
+    int mascara = 1 << i;
+  
+    if(valor & mascara)
+    {
+      versionString =  versionString + '1';
+      unoVisto = true;
+    }
+    else
+    {
+      if(unoVisto)
+      {
+        versionString = versionString + '0';
+      }
+    }
+  }
   
   if(unoVisto == false)
   {
     versionString = '0';
   }
   
-	return versionString;
+  return versionString;
 }
-	
+
+//PROGRAMA PRINCIPAL
 
 int main(int argc, char* argv[])
 {
+  
   std::string nombreFich;
+  
+  //Errores varios
+  
   try
   {
     nombreFich = argv[1];
@@ -88,6 +103,7 @@ int main(int argc, char* argv[])
     return 2; //situación erronea
   }
   
+  //Añadir ".dat" en nombreFich si NO está.
   
   std:: size_t found = nombreFich.find(".dat");
   if (found == std::string::npos)
@@ -98,7 +114,8 @@ int main(int argc, char* argv[])
         nombreFich << std::endl;
   }
    
-   
+  //Apertura del fichero y extracción de los datos
+  
   std::cerr << "Vamos a tratar de abrir el fichero '" << nombreFich << "'"
       << std::endl;
       
@@ -111,9 +128,7 @@ int main(int argc, char* argv[])
   }
   
   std::string valorLeido;
-  
   fichEntrada >> valorLeido;
-  
   std::vector<std::string> datos;
   
   while(fichEntrada.good()) 
@@ -172,6 +187,8 @@ int main(int argc, char* argv[])
       
   } 
   
+  //Mostrar vector bool ya convertido
+  
   std::cerr << "Vector bool" << std::endl;
   std::cerr << "-------------" << std::endl;
   for(unsigned i = 0; i < datos.size(); i++)
@@ -179,9 +196,10 @@ int main(int argc, char* argv[])
     std::cerr << datos.at(i) << ": " << vectorBool.at(i) << std::endl;
   }
   
-  
   unsigned inicialIndex = 0;
   unsigned finalIndex = 0; 
+  
+  //Valores Indices según el número de argumentos
   
   if(argc == 3)
   {
@@ -219,7 +237,10 @@ int main(int argc, char* argv[])
   std::cerr << "inicialIndex: " << inicialIndex << std::endl;
   std::cerr << "finalIndex: " << finalIndex << std::endl;
   
-  unsigned resultado = funcion(vectorBool,inicialIndex,finalIndex);
+  
+  //Salida por pantalla
+  
+  unsigned resultado = boolToUnsigned(vectorBool,inicialIndex,finalIndex);
   std::string cadenaBin = numeroBits(resultado);
   
   std::cout << resultado << " 0x" << std::hex << resultado << " 0b" <<
