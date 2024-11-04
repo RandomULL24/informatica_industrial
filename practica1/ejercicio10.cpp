@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
   {
     nombreFich = argv[1];
   }
-  catch(std::logic_error& e)
+  catch(std::logic_error& e1)
   {
     std::cerr << "Nombre del fichero inválido" << std::endl;
     return 1;
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
   if(argc < 2)
   {
     std::cerr << "Es necesario indicar el fichero de datos" << std::endl;
-    return 1; //situación erronea
+    return 2; //situación erronea
   }
   
   
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
   if(fichEntrada.fail())
   {
    std::cerr << "No se pudo abrir el fichero" << std::endl;
-    return 2;
+    return 3;
   }
   
   std::string valorLeido;
@@ -185,13 +185,28 @@ int main(int argc, char* argv[])
   
   if(argc == 3)
   {
-    inicialIndex = (unsigned) std::stoul(argv[2]);
+    try
+    {
+      inicialIndex = (unsigned) std::stoul(argv[2]);
+    }catch(std::invalid_argument& e2)
+    {
+      std::cerr << "Indice inicial inválido";
+      return 4;
+    }
+    
     finalIndex = (vectorBool.size()-1);
   }
   else if(argc == 4)
   {
-    inicialIndex = (unsigned) std::stoul(argv[2]);
-    finalIndex = (unsigned) std::stoul(argv[3]);
+    try
+    {
+      inicialIndex = (unsigned) std::stoul(argv[2]);
+      finalIndex = (unsigned) std::stoul(argv[3]);
+    }catch(std::invalid_argument& e3)
+    {
+      std::cerr << "Indice inicial o final inválido";
+      return 5;
+    }
   }
   else 
   {
