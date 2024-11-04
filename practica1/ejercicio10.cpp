@@ -10,7 +10,7 @@ unsigned funcion(const std::vector<bool>& vectorBool, unsigned indexInicial,
     unsigned indexFinal)
 {
   std::string string1;
-  float suma = 0;
+  unsigned suma = 0;
   
   for(unsigned i = indexInicial; i <= (indexFinal); i++)
   {
@@ -18,21 +18,22 @@ unsigned funcion(const std::vector<bool>& vectorBool, unsigned indexInicial,
     if(vectorBool.at(i) == true)
     {
       //~ std::cerr << "True" << std::endl;
-      suma += std::pow(2,(i-indexInicial));
-      std::cerr << "1" ;
+      suma += (unsigned) std::pow(2,(i-indexInicial));
+      string1 = "1" + string1 ;
+      //~ std::cerr << (i-indexInicial) << "-"; 
     }
-    else
+    
+    if(vectorBool.at(i) == false)
     {
-      std::cerr << "0";
+      string1 = "0" + string1 ;
     }
+    //~ std::cerr << (i-indexInicial) << "-"; 
   }
   std::cerr << "\n"; 
+  std::cerr << string1 << "\n"; 
+  std::cerr << suma << std::endl; 
   
-  unsigned resultado = (unsigned) suma;
-  
-  
-  
-  return resultado;
+  return suma;
 }
 
 std::string numeroBits(unsigned valor)
@@ -182,19 +183,17 @@ int main(int argc, char* argv[])
   unsigned inicialIndex = 0;
   unsigned finalIndex = 0; 
   
-  
   if(argc == 3)
   {
     inicialIndex = (unsigned) std::stoul(argv[2]);
     finalIndex = (vectorBool.size()-1);
   }
-  else if(argc > 2)
+  else if(argc == 4)
   {
-       inicialIndex = (unsigned) std::stoul(argv[2]);
+    inicialIndex = (unsigned) std::stoul(argv[2]);
     finalIndex = (unsigned) std::stoul(argv[3]);
   }
-  
-  if(argc < 2)
+  else 
   {
     inicialIndex = 0;
     finalIndex = (vectorBool.size()-1);

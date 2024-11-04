@@ -181,7 +181,7 @@ cian "\n* Del 7 sin límite datos 2"
 cat > $TMPOK <<_EOF_
 1380047022 0x5241d8ae 0b1010010010000011101100010101110
 _EOF_
-ejecutaOK datosBoverdadoleanos2 7
+ejecutaOK datosBooleanos2 7
 
 cian "\n* De 9 sin límite datos 1"
 cat > $TMPOK <<_EOF_
