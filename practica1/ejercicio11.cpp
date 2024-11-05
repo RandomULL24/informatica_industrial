@@ -77,6 +77,12 @@ int main()
       }
       //~ std::cerr << vectorBool.at(i);
     }
+    
+    if(entero == 0)
+    {
+      std::cout << "F, ";
+    }
+    
     std::cout << "\n";
   }
   while(entero != 0);
