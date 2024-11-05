@@ -1,12 +1,15 @@
-#include<iostream>
-#include<vector>
-#include<fstream>
-#include<string>
+// Autor: Lucas Díaz Pérez
+// Fecha: 1-7-2024
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
 
 int contar_mayor(std::vector<int>& datos,int pivote)
 {
   int cuenta = 0;
   
+
   for(unsigned i = 0; i < datos.size(); i++)
   {
     if(datos.at(i) > pivote)

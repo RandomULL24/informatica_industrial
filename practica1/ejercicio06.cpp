@@ -1,8 +1,10 @@
-#include<iostream>
-#include<vector>
-#include<fstream>
-#include<string>
-#include<cstring>
+// Autor: Lucas Díaz Pérez
+// Fecha: 1-7-2024
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
+#include <cstring>
 
 int contar_mayor(std::vector<int>& datos,
     std::vector<int>& num_mayor_pivote, std::vector<int>& num_menor_pivote,
