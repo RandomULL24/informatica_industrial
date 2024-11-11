@@ -46,5 +46,11 @@ std::string Dispositivo::toString() const
   
   return cadenaText;
 }
-  
-;
+
+//Sobrecarga operador sobre el objeto
+std::ostream& operator<<(std::ostream& os, const Dispositivo& m) 
+{
+  os << m.toString();
+  return os; 
+}
+

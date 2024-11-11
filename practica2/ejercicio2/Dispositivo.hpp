@@ -27,8 +27,7 @@ public:
   void apaga();
   bool isEncendido() const;
   std::string toString() const;
-  
-
+  friend std::ostream& operator<<(std::ostream& os, const Dispositivo& m);
 };
 
 
