@@ -7,8 +7,16 @@
 
 class Dinamico : public Dispositivo
 {
+  private:
+  
+    unsigned  msPeriodo;
+    
   public:
+  
     virtual void calculaEtapa() = 0; //Método virtual puro (virutal y 0)
+    void setMsPeriodo(unsigned msPeriodo);
+    unsigned getMsPeriodo() const;
+    Dinamico();
 };
 
 #endif
