@@ -30,6 +30,12 @@ class Planta1TanqueNivel : public Planta
     void enciende();
     float getAltura();
     void calculaEtapa();
+    
+    void setValorA(float A);
+    void setValorZ(float Z);
+    float getValorA();
+    float getValorZ();
+    
 };
 
 #endif

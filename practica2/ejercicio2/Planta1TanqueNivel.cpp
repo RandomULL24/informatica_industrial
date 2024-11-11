@@ -50,11 +50,32 @@ float Planta1TanqueNivel::getAltura()
 
 void Planta1TanqueNivel::calculaEtapa()
 {
-
+  
+  (this->T) = getMsPeriodo();
   
   hk = (this->hk) + ((this->T)/(this->A))*((this->actValvula.getCaudal())
       - (this->Z)*sqrt(this->hk));
-      
+          float setValorA(float A);
+    float setValorZ(float Z);
   (this->hk) = hk;
 }
 
+void Planta1TanqueNivel::setValorA(float A)
+{
+  (this->A) = A;
+}
+
+void Planta1TanqueNivel::setValorZ(float Z)
+{
+  (this->Z) = Z;
+}
+
+float Planta1TanqueNivel::getValorA()
+{
+    return this->A;
+}
+
+float Planta1TanqueNivel::getValorZ()
+{
+  return this->Z;
+}
