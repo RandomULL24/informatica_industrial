@@ -54,3 +54,9 @@ std::ostream& operator<<(std::ostream& os, const Dispositivo& m)
   return os; 
 }
 
+//Sobrecarga operador sobre el puntero
+std::ostream& operator<<(std::ostream& os, const Dispositivo* m) 
+{
+  os << m->toString();
+  return os; 
+}

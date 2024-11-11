@@ -27,7 +27,9 @@ public:
   void apaga();
   bool isEncendido() const;
   std::string toString() const;
+  //Sobrecarga del operador '<<'
   friend std::ostream& operator<<(std::ostream& os, const Dispositivo& m);
+  friend std::ostream& operator<<(std::ostream& os, const Dispositivo* m);
 };
 
 
