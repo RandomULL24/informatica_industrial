@@ -26,6 +26,8 @@ public:
   void enciende();
   void apaga();
   bool isEncendido() const;
+  std::string toString() const;
+  
 
 };
 

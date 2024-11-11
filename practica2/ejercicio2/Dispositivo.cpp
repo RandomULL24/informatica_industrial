@@ -36,3 +36,15 @@ void Dispositivo::apaga() {
 bool Dispositivo::isEncendido() const  {
   return this->encendido;
 }
+
+std::string Dispositivo::toString() const
+{
+  std::string Id = std::to_string(this->id);
+  std::string cadenaText;
+  
+  cadenaText = "'" + (this->nombre) + "(id=" + Id + ")'";
+  
+  return cadenaText;
+}
+  
+;
