@@ -51,7 +51,7 @@ float Planta1TanqueNivel::getAltura()
 void Planta1TanqueNivel::calculaEtapa()
 {
   
-  (this->T) = getMsPeriodo();
+  (this->T) = (getMsPeriodo()/1000.0);
   
   hk = (this->hk) + ((this->T)/(this->A))*((this->actValvula.getCaudal())
       - (this->Z)*sqrt(this->hk));
